@@ -1,0 +1,338 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".Statistics">
+
+
+    <TextView
+        android:id="@+id/statistic_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Game statistics"
+        android:textSize="28sp" />
+
+    <LinearLayout
+        android:id="@+id/name_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/statistic_textView"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/playerA_name_text_view"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="#ff17a9ff"
+            android:textAllCaps="true"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/playerB_name_text_view"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+
+            android:layout_weight="1"
+            android:background="#ff17a9ff"
+            android:textAllCaps="true"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="79dp">
+
+        <TableRow>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+
+            <TextView android:text="Set 1" />
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+
+                android:text="Smash win" />
+
+            <TextView
+                android:id="@+id/stat_setA1_smash"
+                android:text="0" />
+
+            <TextView android:text="Smash win" />
+
+            <TextView
+                android:id="@+id/stat_setB1_smash"
+                android:text="0" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView android:text="Net win" />
+
+            <TextView
+                android:id="@+id/stat_setA1_net"
+                android:text="0" />
+
+            <TextView android:text="Net win" />
+
+            <TextView
+                android:id="@+id/stat_setB1_net"
+                android:text="0" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView android:text="Clear win" />
+
+            <TextView
+                android:id="@+id/stat_setA1_clear"
+                android:text="0" />
+
+            <TextView android:text="Clear win" />
+
+            <TextView
+                android:id="@+id/stat_setB1_clear"
+                android:text="0" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_marginBottom="10dp"
+
+                android:text="Opponent's Error" />
+
+            <TextView
+                android:id="@+id/stat_setA1_oppo"
+                android:layout_marginRight="10dp"
+                android:text="0" />
+
+            <TextView android:text="Opponent's Error" />
+
+            <TextView
+                android:id="@+id/stat_setB1_oppo"
+                android:text="0" />
+        </TableRow>
+
+        <TableRow>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView android:text="Set 2" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+
+                android:text="Smash win" />
+
+            <TextView
+                android:id="@+id/stat_setA2_smash"
+                android:text="0" />
+
+            <TextView android:text="Smash win" />
+
+            <TextView
+                android:id="@+id/stat_setB2_smash"
+                android:text="0" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView android:text="Net win" />
+
+            <TextView
+                android:id="@+id/stat_setA2_net"
+                android:text="0" />
+
+            <TextView android:text="Net win" />
+
+            <TextView
+                android:id="@+id/stat_setB2_net"
+                android:text="0" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView android:text="Clear win" />
+
+            <TextView
+                android:id="@+id/stat_setA2_clear"
+                android:text="0" />
+
+            <TextView android:text="Clear win" />
+
+            <TextView
+                android:id="@+id/stat_setB2_clear"
+                android:text="0" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_marginBottom="10dp"
+
+                android:text="Opponent's Error" />
+
+            <TextView
+                android:id="@+id/stat_setA2_oppo"
+                android:layout_marginRight="10dp"
+                android:text="0" />
+
+            <TextView android:text="Opponent's Error" />
+
+            <TextView
+                android:id="@+id/stat_setB2_oppo"
+                android:text="0" />
+        </TableRow>
+
+        <TableRow>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView android:text="Set 3" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+
+                android:text="Smash win" />
+
+            <TextView
+                android:id="@+id/stat_setA3_smash"
+                android:text="0" />
+
+            <TextView android:text="Smash win" />
+
+            <TextView
+                android:id="@+id/stat_setB3_smash"
+                android:text="0" />/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView android:text="Net win" />
+
+            <TextView
+                android:id="@+id/stat_setA3_net"
+                android:text="0" />
+
+            <TextView android:text="Net win" />
+
+            <TextView
+                android:id="@+id/stat_setB3_net"
+                android:text="0" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView android:text="Clear win" />
+
+            <TextView
+                android:id="@+id/stat_setA3_clear"
+                android:text="0" />
+
+            <TextView android:text="Clear win" />
+
+            <TextView
+                android:id="@+id/stat_setB3_clear"
+                android:text="0" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_marginRight="10dp"
+                android:text="Opponent's Error" />
+
+            <TextView
+                android:id="@+id/stat_setA3_oppo"
+                android:layout_marginRight="50dp"
+                android:text="0" />
+
+            <TextView
+                android:layout_marginRight="10dp"
+                android:text="Opponent's Error" />
+
+            <TextView
+                android:id="@+id/stat_setB3_oppo"
+                android:layout_marginRight="10dp"
+                android:text="0" />
+        </TableRow>
+
+
+    </TableLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/single_startover_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:layout_weight="1"
+            android:background="#ffbfff16"
+            android:onClick="startOver"
+            android:text="Start over" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

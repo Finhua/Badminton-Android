@@ -1,0 +1,135 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DoubleReg">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="80dp"
+        app:cardBackgroundColor="@color/black"
+        app:cardCornerRadius="4dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_single_game"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@color/black_dark"
+                    android:onClick="singleRegister"
+                    android:text="@string/single_match_btn"
+                    android:textAllCaps="true"
+                    android:textColor="@color/grey" />
+
+                <Button
+                    android:id="@+id/button_double_game"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@color/black"
+                    android:text="@string/double_match_btn"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/nameA1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:background="@color/black_dark"
+                android:hint="Team 1 - Play A"
+                android:padding="12dp"
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/grey"
+                android:textSize="15dp" />
+
+            <EditText
+                android:id="@+id/nameA2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:background="@color/black_dark"
+                android:hint="Team 1 - Play B"
+                android:padding="12dp"
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/grey"
+                android:textSize="15dp" />
+
+            <EditText
+                android:id="@+id/nameB1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:background="@color/black_dark"
+                android:hint="Team 2 - Play C"
+                android:padding="12dp"
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/grey"
+                android:textSize="15dp" />
+
+            <EditText
+                android:id="@+id/nameB2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:background="@color/black_dark"
+                android:hint="Team 2 - Play D"
+                android:padding="12dp"
+                android:textColor="@color/yellow"
+                android:textColorHint="@color/grey"
+                android:textSize="15dp" />
+
+            <Button
+                android:id="@+id/single_start_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/primary_btn"
+                android:onClick="startDouble"
+                android:text="@string/start_btn"
+                android:textColor="@color/white"
+                android:textSize="15dp" />
+
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

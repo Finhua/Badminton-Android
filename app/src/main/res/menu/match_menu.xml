@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".SingleScore">
+
+    <item
+        android:id="@+id/quit_match_view"
+        android:checked="true"
+        android:showAsAction="always"
+        android:title="@string/close" />
+
+
+</menu>
