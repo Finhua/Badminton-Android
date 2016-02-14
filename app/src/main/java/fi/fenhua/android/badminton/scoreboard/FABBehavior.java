@@ -1,4 +1,4 @@
-package com.example.android.badmintonscoreboard;
+package fi.fenhua.android.badminton.scoreboard;
 
 import android.content.Context;
 import android.support.design.widget.AppBarLayout;
@@ -12,7 +12,7 @@ public class FABBehavior extends CoordinatorLayout.Behavior<FloatingActionButton
 
     public FABBehavior(Context context, AttributeSet attrs) {
         super(context, attrs);
-        this.toolbarHeight = com.example.android.badmintonscoreboard.Utils.getToolbarHeight(context);
+        this.toolbarHeight = Utils.getToolbarHeight(context);
     }
 
     @Override

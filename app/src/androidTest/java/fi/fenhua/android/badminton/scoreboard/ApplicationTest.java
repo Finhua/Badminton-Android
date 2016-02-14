@@ -1,4 +1,5 @@
-package com.example.android.badmintonscoreboard;
+package fi.fenhua.android.badminton.scoreboard;
+
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

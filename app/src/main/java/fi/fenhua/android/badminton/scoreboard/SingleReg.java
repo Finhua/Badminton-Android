@@ -1,4 +1,4 @@
-package com.example.android.badmintonscoreboard;
+package fi.fenhua.android.badminton.scoreboard;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -83,14 +83,14 @@ public class SingleReg extends AppCompatActivity {
     }
     //start single game, passing players' name to SingleScore class
     public void startSingle(View view) {
-        Intent startSingleGame = new Intent(SingleReg.this, com.example.android.badmintonscoreboard.SingleScore.class);
+        Intent startSingleGame = new Intent(SingleReg.this, SingleScore.class);
         startSingleGame.putExtra("playerA", playerAName.getText().toString());
         startSingleGame.putExtra("playerB", playerBName.getText().toString());
         startActivity(startSingleGame);
     }
     //start double game, passing players' name to DoubleScore class
     public void startDouble(View view) {
-        Intent startDoubleGame = new Intent(SingleReg.this, com.example.android.badmintonscoreboard.DoubleScore.class);
+        Intent startDoubleGame = new Intent(SingleReg.this, DoubleScore.class);
         startDoubleGame.putExtra("playerA1", playerA1Name.getText().toString());
         startDoubleGame.putExtra("playerB1", playerB1Name.getText().toString());
         startDoubleGame.putExtra("playerA2", playerA2Name.getText().toString());
