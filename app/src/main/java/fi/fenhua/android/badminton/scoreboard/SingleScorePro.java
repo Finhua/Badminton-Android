@@ -1,4 +1,4 @@
-package com.example.android.badmintonscoreboard;
+package fi.fenhua.android.badminton.scoreboard;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -415,7 +415,7 @@ public class SingleScorePro extends AppCompatActivity {
      */
     public void startOver(View view) {
         chronometer.stop();
-        Intent startOver = new Intent(this, com.example.android.badmintonscoreboard.MainActivity.class);
+        Intent startOver = new Intent(this, MainActivity.class);
 
         startActivity(startOver);
     }
@@ -424,7 +424,7 @@ public class SingleScorePro extends AppCompatActivity {
      * Veiw game statistics
      */
     public void statistics(View view) {
-        Intent statistics = new Intent(this, com.example.android.badmintonscoreboard.Statistics.class);
+        Intent statistics = new Intent(this, Statistics.class);
         statistics.putExtra("playerA", playerAName);
         statistics.putExtra("playerB", playerBName);
 

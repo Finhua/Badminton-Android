@@ -1,4 +1,4 @@
-package com.example.android.badmintonscoreboard;
+package fi.fenhua.android.badminton.scoreboard;
 
 import android.content.Context;
 import android.content.Intent;
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void singleReg(View view) {
-        Intent singleRegisterForm = new Intent(this, com.example.android.badmintonscoreboard.SingleReg.class);
+        Intent singleRegisterForm = new Intent(this, SingleReg.class);
 
         startActivity(singleRegisterForm);
     }
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         rv.setLayoutManager(llm);
 
 
-        com.example.android.badmintonscoreboard.GameAdapter adapter = new com.example.android.badmintonscoreboard.GameAdapter(games);
+        GameAdapter adapter = new GameAdapter(games);
         rv.setAdapter(adapter);
     }
 

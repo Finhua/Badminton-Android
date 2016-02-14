@@ -1,4 +1,4 @@
-package com.example.android.badmintonscoreboard;
+package fi.fenhua.android.badminton.scoreboard;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.android.badmintonscoreboard.R;
 
 
 /**
