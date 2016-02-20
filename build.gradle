@@ -5,7 +5,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.2.3'
+        classpath 'com.android.tools.build:gradle:1.5.0'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -16,4 +16,19 @@ allprojects {
     repositories {
         jcenter()
     }
+}
+
+// Global configuration
+ext {
+    compileSdkVersion = 23
+    buildToolsVersion = "23.0.2"
+
+    applicationId = "fi.fenhua.android.badminton.scoreboard"
+    minSdkVersion = 15 // Android 4.0.4
+    targetSdkVersion = 23
+
+    // x.y.z => major.minor.bugFixes
+    // 1.00.01
+    versionCode = 100101
+    versionName = "1.0.1"
 }
