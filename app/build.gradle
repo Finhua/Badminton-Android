@@ -15,6 +15,8 @@ android {
 
         versionCode rootProject.ext.versionCode
         versionName rootProject.ext.versionName
+
+        multiDexEnabled true
     }
 
     compileOptions {
@@ -31,6 +33,13 @@ android {
             // fi.fenhua.android.badminton.scoreboard.debug
             applicationIdSuffix ".debug"
         }
+
+        alpha {
+            // disable ProGuard
+            minifyEnabled false
+            applicationIdSuffix ".alpha"
+        }
+
         release {
             // disable Proguard
             minifyEnabled false
