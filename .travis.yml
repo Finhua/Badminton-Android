@@ -38,6 +38,8 @@ android:
 
 before_install:
 
+  - sudo chmod +x gradlew 
+
   # for gradle output style
   - export TERM=dumb
 
@@ -47,5 +49,5 @@ before_install:
 
   # Let's try to build...
 script:
-  - sudo chmod +x gradlew
+  #- sudo chmod +x gradlew
   - ./gradlew clean build
