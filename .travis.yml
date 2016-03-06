@@ -51,3 +51,10 @@ before_install:
   # Let's try to build...
 script:
   - ./gradlew clean assembleRelease
+  - ./gradlew printApkFiles
+
+  # upload apk
+#after_success:
+   
+
+
