@@ -37,7 +37,8 @@ android:
     #- sys-img-x86-android-17
 
 before_install:
-
+  
+  # build command
   - chmod +x gradlew 
 
   # for gradle output style
@@ -49,5 +50,4 @@ before_install:
 
   # Let's try to build...
 script:
-  #- sudo chmod +x gradlew
-  - ./gradlew clean build
+  - ./gradlew clean assembleRelease
