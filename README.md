@@ -6,7 +6,7 @@ Badminton Score Board
 
 This is an open source project by couple of enthusiasts from Finhua (A badminton club based in Helsinki, Finland). The purpose of this project is to make an scoring service for badminton players.
 
-Currently, this service is meant to provide scoring functionalities via smart phone, tablet. Make score data storeable,searchable, shareable.
+Currently, this service is meant to provide scoring functionalities via smart phone, tablet. Make score data storeable, searchable, shareable.
 Later on, more funcationalities will be added.
 
 The application is going to support at least English, Finnish as well as Chinese.
