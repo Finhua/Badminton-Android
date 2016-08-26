@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/Finhua/BadmintonScoreBoard-Android.png)](https://travis-ci.org/Finhua/BadmintonScoreBoard-Android)
 
 
-Badminton Score Board
+Badminton
 =================
 
 This is an open source project by couple of enthusiasts from Finhua (A badminton club based in Helsinki, Finland). The purpose of this project is to make an scoring service for badminton players.
