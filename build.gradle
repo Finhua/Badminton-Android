@@ -34,4 +34,6 @@ ext {
 
     supportLibraryVersion = "24.2.0"
     multidexVersion = "1.0.1"
+
+    compileCompatibility = JavaVersion.VERSION_1_8
 }

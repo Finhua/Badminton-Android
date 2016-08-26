@@ -17,11 +17,15 @@ android {
         versionName rootProject.ext.versionName
 
         multiDexEnabled true
+
+        jackOptions {
+            enabled true
+        }
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
+        sourceCompatibility rootProject.ext.compileCompatibility
+        targetCompatibility rootProject.ext.compileCompatibility
     }
 
     buildTypes {

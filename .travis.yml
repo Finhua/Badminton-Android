@@ -3,7 +3,7 @@ sudo: false
 language: android
 
 jdk:
-  - openjdk7
+  - openjdk8
 
 branches:
   only:
