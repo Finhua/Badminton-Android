@@ -1,4 +1,4 @@
-package fi.fenhua.android.badminton.scoreboard;
+package fi.finhua.android.badminton;
 
 import android.content.Context;
 import android.content.Intent;
@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 

@@ -1,4 +1,4 @@
-package fi.fenhua.android.badminton.scoreboard;
+package fi.finhua.android.badminton;
 
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;

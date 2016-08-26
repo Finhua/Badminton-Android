@@ -1,4 +1,4 @@
-package fi.fenhua.android.badminton.scoreboard;
+package fi.finhua.android.badminton;
 
 /**
  * Created by xiao on 16/11/2015.

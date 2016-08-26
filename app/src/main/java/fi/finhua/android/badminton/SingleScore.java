@@ -1,4 +1,4 @@
-package fi.fenhua.android.badminton.scoreboard;
+package fi.finhua.android.badminton;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,51 +13,42 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-
 /**
- * Created by xiao on 26/06/2015.
+ * Created by xiao on 24/06/2015.
  */
-public class DoubleScore extends AppCompatActivity {
+public class SingleScore extends AppCompatActivity {
 
     int scoreA = 0;
     int scoreB = 0;
     int maxScore = 15;
     int nomScore = 21;
-    TextView playerA1View;
-    TextView playerA2View;
-    TextView playerB1View;
-    TextView playerB2View;
+    TextView playerAView;
+    TextView playerBView;
     TextView winnerATextView;
     TextView winnerBTextView;
     Button addA;
     Button addB;
     Button deductA;
     Button deductB;
-    Button matchSummary;
-
+    Button  matchSummary;
 
     int winnerB = 0;
-    int winnerA = 0;
-    String playerA1Name;
-    String playerA2Name;
-    String playerB1Name;
-    String playerB2Name;
+    int winnerA = 0; // player A's winning sets
+    String playerAName;
+    String playerBName;
     Button next;
     Chronometer chronometer;
 
     private ArrayList<String> result = new ArrayList<String>();
     private Toolbar mToolbar;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.double_score);
+        setContentView(R.layout.single_score);
 
         mToolbar = (Toolbar) findViewById(R.id.match_header);
         setSupportActionBar(mToolbar);
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
 
 
         /**
@@ -66,29 +57,28 @@ public class DoubleScore extends AppCompatActivity {
         chronometer = (Chronometer) findViewById(R.id.clock);
         chronometer.setBase(SystemClock.elapsedRealtime());
         chronometer.start();
+
+
         /**
-         * This method displays the fetched team A& B palyers' name value on the screen.
+         * This method displays the fetched player A name value on the screen.
          */
 
-        playerA1View = (TextView) findViewById(R.id.playerA1_name_text_view);
-        playerB1View = (TextView) findViewById(R.id.playerB1_name_text_view);
-        playerA2View = (TextView) findViewById(R.id.playerA2_name_text_view);
-        playerB2View = (TextView) findViewById(R.id.playerB2_name_text_view);
+        playerAView = (TextView) findViewById(R.id.playerA_name_text_view);
+        playerBView = (TextView) findViewById(R.id.playerB_name_text_view);
 
-        Intent startDoubleGame = getIntent();
-        playerA1Name = startDoubleGame.getStringExtra("playerA1");
-        playerB1Name = startDoubleGame.getStringExtra("playerB1");
-        playerA2Name = startDoubleGame.getStringExtra("playerA2");
-        playerB2Name = startDoubleGame.getStringExtra("playerB2");
+        Intent startSingleGame = getIntent();
+        playerAName = startSingleGame.getStringExtra("playerA");
+        playerBName = startSingleGame.getStringExtra("playerB");
 
-        playerA1View.setText(playerA1Name);
-        playerB1View.setText(playerB1Name);
-        playerA2View.setText(playerA2Name);
-        playerB2View.setText(playerB2Name);
+        playerAView.setText(playerAName);
+        playerBView.setText(playerBName);
+
+
     }
 
+
     /**
-     * This method calculates player A's score.
+     * This method calculates player A's score..
      */
     public void scoreA(View view) {
         scoreA = scoreA + 1;
@@ -99,6 +89,7 @@ public class DoubleScore extends AppCompatActivity {
             displaySetA(winnerA);
             disButton();
             // record set score to memory
+
             String res = scoreA + "           :            " + scoreB;
             result.add(res);
             if (winnerA == 2) {
@@ -106,12 +97,12 @@ public class DoubleScore extends AppCompatActivity {
                 disButtonGame();
                 chronometer.stop();
                 showMatchSummary();
+
             }
         }
     }
-
     /**
-     * This method is called when the score B button is clicked.
+     * This method calculates player B's score.
      */
     public void scoreB(View view) {
         scoreB = scoreB + 1;
@@ -121,7 +112,6 @@ public class DoubleScore extends AppCompatActivity {
             winnerB = winnerB + 1;
             displaySetB(winnerB);
             disButton();
-            // record set score to memory
             String res = scoreA + "           :            " + scoreB;
             result.add(res);
             if (winnerB == 2) {
@@ -130,16 +120,17 @@ public class DoubleScore extends AppCompatActivity {
                 chronometer.stop();
                 showMatchSummary();
             }
+
         }
+
     }
     /**
      * This method deduct player A's score in case of wrong input.
      */
     public void deductA(View view) {
         scoreA = scoreA - 1;
-        displayA(scoreA);
         if (scoreA<0){
-            Toast.makeText(DoubleScore.this,"Score can't be less than zero",Toast.LENGTH_LONG).show();
+           Toast.makeText(SingleScore.this,"Score can't be less than zero",Toast.LENGTH_LONG).show();
             scoreA=0;
         }
         displayA(scoreA);
@@ -149,21 +140,11 @@ public class DoubleScore extends AppCompatActivity {
      */
     public void deductB(View view) {
         scoreB = scoreB - 1;
-        displayB(scoreB);
         if (scoreB < 0) {
-            Toast.makeText(DoubleScore.this, "Score can't be less than zero", Toast.LENGTH_LONG).show();
+            Toast.makeText(SingleScore.this, "Score can't be less than zero", Toast.LENGTH_LONG).show();
             scoreB = 0;
         }
         displayB(scoreB);
-    }
-    /**
-     * This method displays game winner B name and set score value on the screen.
-     */
-    private void showMatchSummary (){
-        next =(Button)findViewById(R.id.next_button);
-        next.setVisibility(Button.GONE);
-        matchSummary = (Button)findViewById(R.id.double_match_summary_button);
-        matchSummary.setVisibility(Button.VISIBLE);
     }
     /**
      * This method displays game winner A name and set score value on the screen.
@@ -171,22 +152,27 @@ public class DoubleScore extends AppCompatActivity {
     private void gameWinnerA() {
         winnerATextView = (TextView) findViewById(R.id.winner_name_text_view);
         Intent startSingleGame = getIntent();
-        playerA1Name = startSingleGame.getStringExtra("playerA1");
-        playerA2Name = startSingleGame.getStringExtra("playerA2");
-        winnerATextView.setText(winnerA + " : " + winnerB + "   " + playerA1Name + " & " + playerA2Name + " win this game");
+        playerAName = startSingleGame.getStringExtra("playerA");
+        winnerATextView.setText(winnerA + " : " + winnerB + "   " + playerAName + " wins this game");
 
     }
-
+    /**
+     * This method displays game winner B name and set score value on the screen.
+     */
+    private void showMatchSummary (){
+        next =(Button)findViewById(R.id.next_button);
+        next.setVisibility(Button.GONE);
+        matchSummary = (Button)findViewById(R.id.single_match_summary_button);
+        matchSummary.setVisibility(Button.VISIBLE);
+    }
     /**
      * This method displays game winner B name and set score value on the screen.
      */
     private void gameWinnerB() {
         winnerBTextView = (TextView) findViewById(R.id.winner_name_text_view);
         Intent startSingleGame = getIntent();
-        playerB1Name = startSingleGame.getStringExtra("playerB1");
-        playerB2Name = startSingleGame.getStringExtra("playerB1");
-        winnerBTextView.setText(winnerB + " : " + winnerA + "   " + playerB1Name + " & " + playerB2Name + " win this game");
-
+        playerBName = startSingleGame.getStringExtra("playerB");
+        winnerBTextView.setText(winnerB + " : " + winnerA + "   " + playerBName + " wins this game");
     }
 
     /**
@@ -197,7 +183,6 @@ public class DoubleScore extends AppCompatActivity {
                 R.id.playerA_score_text_view);
         playerATextView.setText("" + number);
     }
-
 
     /**
      * This method displays the given player B score value on the screen.
@@ -241,28 +226,26 @@ public class DoubleScore extends AppCompatActivity {
      * start next set
      */
     public void nextSet(View view) {
+
         scoreA = 0;
         scoreB = 0;
         displayA(scoreA);
         displayB(scoreB);
         enButton();
     }
-
     /**
      * start match summary
      */
     public void matchSummary(View view) {
 
-        Intent matchSummary = new Intent(this, DoubleMatchSummary.class);
+        Intent matchSummary = new Intent(this, SingleMatchSummary.class);
         matchSummary.putExtra("result_list",result);
-        matchSummary.putExtra("playerA1", playerA1Name);
-        matchSummary.putExtra("playerB1", playerB1Name);
-        matchSummary.putExtra("playerA2", playerA2Name);
-        matchSummary.putExtra("playerB2", playerB2Name);
+        matchSummary.putExtra("playerA", playerAName);
+        matchSummary.putExtra("playerB", playerBName);
         startActivity(matchSummary);
     }
     /**
-    * start over from beginning
+     * start over from beginning
      */
     public void startOver(View view) {
         chronometer.stop();
@@ -270,6 +253,7 @@ public class DoubleScore extends AppCompatActivity {
 
         startActivity(startOver);
     }
+
 
     /**
      * This method disables score buttons. When set is finished, no additional score can be added.
@@ -284,7 +268,6 @@ public class DoubleScore extends AppCompatActivity {
         deductB = (Button) findViewById(R.id.button_deduct_B);
         deductB.setEnabled(false);
     }
-
 
     /**
      * This method disables score buttons and next button. When game is finished, no additional score can be added.
@@ -310,16 +293,12 @@ public class DoubleScore extends AppCompatActivity {
         addA.setEnabled(true);
         addB = (Button) findViewById(R.id.button_add_B);
         addB.setEnabled(true);
-        deductA =(Button) findViewById(R.id.button_deduct_A);
+        deductA= (Button) findViewById(R.id.button_deduct_A);
         deductA.setEnabled(true);
         deductB = (Button) findViewById(R.id.button_deduct_B);
         deductB.setEnabled(true);
     }
 }
-
-
-
-
 
 
 
