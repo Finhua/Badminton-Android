@@ -1,65 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="fi.fenhua.android.badminton.scoreboard">
+    package="fi.finhua.android.badminton.scoreboard">
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
             android:name="MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
+                <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <!-- TODO change url -->
+                <data android:scheme="https" android:host="www.google.com" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <action android:name="android.intent.action.VIEW"/>
             </intent-filter>
         </activity>
         <activity
             android:name="SingleReg"
             android:label="@string/registration_view_title"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <activity
             android:name="DoubleReg"
             android:label="@string/registration_view_title"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme" />
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <activity
             android:name="SingleScore"
             android:label="@string/match_view_title"
             android:parentActivityName=".SingleReg"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SingleReg" />
+        </activity>
         <activity
             android:name="Statistics"
             android:label="Statistics"
-            android:parentActivityName=".SingleScore"
-            android:theme="@style/AppTheme" />
+            android:parentActivityName=".SingleScore">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".SingleScore" />
+     </activity>
         <activity
             android:name="SingleScore3"
             android:label="@string/match_view_title"
-            android:parentActivityName=".SingleReg"
-            android:theme="@style/AppTheme" />
+            android:parentActivityName=".SingleReg">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SingleReg" />
+        </activity>
 
         <activity
             android:name="DoubleScore"
             android:label="@string/match_view_title"
             android:parentActivityName=".SingleReg"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SingleReg" />
+        </activity>
         <activity
             android:name=".SingleMatchSummary"
             android:label="@string/match_summary_title"
             android:parentActivityName=".SingleScore"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SingleScore" />
+        </activity>
         <activity
             android:name=".DoubleMatchSummary"
             android:label="@string/match_summary_title"
             android:parentActivityName=".DoubleScore"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DoubleScore" />
+        </activity>
     </application>
 
 </manifest>

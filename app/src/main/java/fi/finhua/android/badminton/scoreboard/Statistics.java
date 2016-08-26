@@ -1,4 +1,4 @@
-package fi.fenhua.android.badminton.scoreboard;
+package fi.finhua.android.badminton.scoreboard;
 
 import android.app.Activity;
 import android.content.Intent;

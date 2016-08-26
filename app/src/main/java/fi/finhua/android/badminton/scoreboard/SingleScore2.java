@@ -1,4 +1,4 @@
-package fi.fenhua.android.badminton.scoreboard;
+package fi.finhua.android.badminton.scoreboard;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,7 +11,7 @@ import android.widget.TextView;
 /**
  * Created by xiao on 26/06/2015.
  */
-public class SingleScore3 extends Activity {
+public class SingleScore2 extends Activity {
 
     int scoreA = 0;
     int scoreB = 0;
@@ -19,6 +19,8 @@ public class SingleScore3 extends Activity {
     int nomScore = 21;
     TextView playerAView;
     TextView playerBView;
+    TextView set2AView;
+    TextView set2BView;
     TextView winnerATextView;
     TextView winnerBTextView;
     Button smashA;
@@ -29,21 +31,37 @@ public class SingleScore3 extends Activity {
     Button netB;
     Button clearB;
     Button oppoB;
+    String playerAName;
+    String playerBName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.single_score_3);
+        setContentView(R.layout.single_score_2);
         /**
-         * This method diplays the fetched player A name value on the screen.
+         * This method displays the fetched set value on the screen.
+         */
+
+        /**set2AView = (TextView) findViewById(R.id.playerA_set_text_view);
+         set2BView = (TextView) findViewById(R.id.playerB_set_text_view);
+
+         Intent singleNext = getIntent();
+         int set2A = singleNext.getIntExtra("winA1", 0);
+         int set2B = singleNext.getIntExtra("winB1",0);
+
+         set2AView.setText(set2A);
+         set2BView.setText(set2B);
+
+         /**
+         * This method displays the fetched player A name value on the screen.
          */
 
         playerAView = (TextView) findViewById(R.id.playerA_name_text_view);
         playerBView = (TextView) findViewById(R.id.playerB_name_text_view);
 
         Intent startSingleGame = getIntent();
-        String playerAName = startSingleGame.getStringExtra("playerA");
-        String playerBName = startSingleGame.getStringExtra("playerB");
+        playerAName = startSingleGame.getStringExtra("playerA");
+        playerBName = startSingleGame.getStringExtra("playerB");
 
         playerAView.setText(playerAName);
         playerBView.setText(playerBName);
@@ -213,10 +231,16 @@ public class SingleScore3 extends Activity {
         oppoB.setEnabled(true);
     }
 
+    public void nextSet(View view) {
+        Intent singleNext = new Intent(this, SingleScore3.class);
+        singleNext.putExtra("playerA", playerAName);
+        singleNext.putExtra("playerB", playerBName);
+        startActivity(singleNext);
+    }
+
     public void startOver(View view) {
         Intent startOver = new Intent(this, MainActivity.class);
 
         startActivity(startOver);
     }
-
 }
