@@ -28,7 +28,7 @@
                 app:expandedTitleMarginStart="105dp"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-                <fi.fenhua.android.badminton.scoreboard.SquareImageView
+                <fi.finhua.android.badminton.SquareImageView
                     android:id="@+id/homeImage"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
