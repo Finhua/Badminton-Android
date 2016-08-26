@@ -23,7 +23,7 @@ ext {
     compileSdkVersion = 24
     buildToolsVersion = "24.0.2"
 
-    applicationId = "fi.finhua.android.badminton.scoreboard"
+    applicationId = "fi.finhua.android.badminton"
     minSdkVersion = 15 // Android 4.0.4
     targetSdkVersion = 24 // Android 7.0
 

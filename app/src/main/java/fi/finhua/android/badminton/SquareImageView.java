@@ -1,4 +1,4 @@
-package fi.finhua.android.badminton.scoreboard;
+package fi.finhua.android.badminton;
 
 import android.content.Context;
 import android.util.AttributeSet;
