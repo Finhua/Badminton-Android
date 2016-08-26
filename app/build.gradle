@@ -33,9 +33,16 @@ android {
             debuggable true
             // disable Proguard
             minifyEnabled false
-            // package name is to
-            // fi.fenhua.android.badminton.scoreboard.debug
+            // package name is
+            // fi.finhua.android.badminton.debug
             applicationIdSuffix ".debug"
+        }
+
+        develop {
+            debuggable true
+            // disable Proguard
+            minifyEnabled false
+            applicationIdSuffix ".dev"
         }
 
         release {
@@ -43,14 +50,6 @@ android {
             minifyEnabled false
         }
     }
-}
-
-task printApkFiles {
-    FileTree ioTree = fileTree(dir: "build/outputs/apk/")
-    ioTree.each { f ->
-        println("APK file: " + f.absolutePath);
-    }
-    println("This is building last step!")
 }
 
 dependencies {
