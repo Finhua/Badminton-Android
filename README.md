@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/Finhua/BadmintonScoreBoard-Android.png)](https://travis-ci.org/Finhua/BadmintonScoreBoard-Android)
+[![Build Status](https://travis-ci.org/Finhua/Badminton-Android.png)](https://travis-ci.org/Finhua/Badminton-Android)
 
 
 Badminton
