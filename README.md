@@ -23,7 +23,7 @@ License
 =======
 
     Copyright 2015 Xiao Ma
-                   Ding Hong
+                   Hong Ding
     Copyright 2016 Chao Wei
 
 
