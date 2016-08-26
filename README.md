@@ -15,7 +15,7 @@ Developed By
 ============
 
 * Xiao Ma
-* Ding Hong
+* Hong Ding
 * Chao Wei
 
 
