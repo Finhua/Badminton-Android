@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/Finhua/BadmintonScoreBoard-Android.png)](https://travis-ci.org/Finhua/BadmintonScoreBoard-Android)
+
+
 Badminton Score Board
 =================
 
@@ -7,11 +10,6 @@ Currently, this service is meant to provide scoring functionalities via smart ph
 Later on, more funcationalities will be added.
 
 The application is going to support at least English, Finnish as well as Chinese.
-
-Building Status
-============
-https://travis-ci.org/Finhua/BadmintonScoreBoard-Android.svg?branch=f-travis-ci
-
 
 Developed By
 ============
